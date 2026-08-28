@@ -1,0 +1,52 @@
+# ==========================================
+# 1. Environment & Security (CRITICAL)
+# ==========================================
+.env
+.env.*
+*.pem
+*.key
+
+# ==========================================
+# 2. Python Virtual Environments & Packages
+# ==========================================
+quant_ai_env/
+venv/
+.venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# ==========================================
+# 3. dbt Execution Artifacts & Logs
+# ==========================================
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+*.log
+
+# ==========================================
+# 4. Prefect Orchestration Cache & Database
+# ==========================================
+.prefect/
+*.db
+*.sqlite
+
+# ==========================================
+# 5. IDE & Operating System Files
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# 6. ML Models & Large Binaries (Optional)
+# ==========================================
+# Uncomment if you save heavy trained model files locally
+# *.joblib
+# *.pkl
+# *.onnx

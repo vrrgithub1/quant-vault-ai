@@ -1,0 +1,8 @@
+# filepath: dbt_project/models/stage/src_vault.yml
+version: 2
+
+sources:
+  - name: raw_vault
+    schema: raw_vault
+    tables:
+      - name: sat_company_text_embeddings

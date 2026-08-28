@@ -1,0 +1,10 @@
+# filepath: dbt_project/models/stage/src_fmp.yml
+# filepath: dbt_project/models/stage/src_fmp.yml
+version: 2
+
+sources:
+  - name: raw_fmp
+    schema: raw
+    tables:
+      - name: raw_fmp_financial_ratios
+      - name: raw_fmp_daily_prices

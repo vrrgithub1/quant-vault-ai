@@ -1,0 +1,32 @@
+# filepath: dbt_project/dbt_project.yml
+name: 'quant_vault_ai'
+version: '1.0.0'
+config-version: 2
+
+profile: 'quant_vault_ai_profile'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  quant_vault_ai:
+    stage:
+      +schema: stage
+      +materialized: view
+    raw_vault:
+      +schema: raw_vault
+      +materialized: incremental
+    business_vault:
+      +schema: business_vault
+      +materialized: table
+    info_marts:
+      +schema: info_mart
+      +materialized: table
