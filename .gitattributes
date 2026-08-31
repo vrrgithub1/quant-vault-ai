@@ -1,0 +1,7 @@
+# Force GitHub Linguist to treat dbt SQL macros as SQL
+*.sql linguist-language=SQL
+*.sql linguist-detectable=true
+
+# Optional: If you want YAML files to count as YAML in the language bar
+*.yml linguist-detectable=true
+*.yaml linguist-detectable=true
