@@ -155,4 +155,4 @@ dbt run
 
 Read the full deep-dive architectural breakdown on Medium:
 
-👉 Quant Vault AI: Architecting a Hybrid Vector Search and Machine Learning Trading Engine
+👉 [Architecting a Hybrid Vector Search and Machine Learning Trading Engine](https://medium.com/@vrrajadurai/quant-vault-ai-architecting-a-hybrid-vector-search-and-machine-learning-trading-engine-5a41586629d1)
