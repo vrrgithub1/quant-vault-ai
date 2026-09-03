@@ -1,7 +1,77 @@
-# Force GitHub Linguist to treat dbt SQL macros as SQL
-*.sql linguist-language=SQL
-*.sql linguist-detectable=true
+# ==============================================================================
+# 1. DEFAULT LINE ENDINGS & TEXT HANDLING
+# ==============================================================================
+# Set default behavior to normalize line endings to LF on commit
+* text=auto eol=lf
 
-# Optional: If you want YAML files to count as YAML in the language bar
-*.yml linguist-detectable=true
-*.yaml linguist-detectable=true
+# Explicitly ensure code and text files maintain LF line endings
+*.py          text eol=lf
+*.sh          text eol=lf
+*.bash        text eol=lf
+*.sql         text eol=lf
+*.jinja       text eol=lf
+*.jinja2      text eol=lf
+*.yml         text eol=lf
+*.yaml        text eol=lf
+*.json        text eol=lf
+*.md          text eol=lf
+*.toml        text eol=lf
+*.ini         text eol=lf
+*.env         text eol=lf
+*.xml         text eol=lf
+*.html        text eol=lf
+*.css         text eol=lf
+*.js          text eol=lf
+*.ts          text eol=lf
+
+# Force Windows batch scripts to maintain CRLF
+*.bat         text eol=crlf
+*.cmd         text eol=crlf
+*.ps1         text eol=crlf
+
+# ==============================================================================
+# 2. GITHUB LINGUIST OVERRIDES (LANGUAGE STATISTICS & HIGHLIGHTING)
+# ==============================================================================
+
+# SQL & Data Vault / dbt Macros
+*.sql         linguist-language=SQL          linguist-detectable=true
+*.ddl         linguist-language=SQL          linguist-detectable=true
+*.dml         linguist-language=SQL          linguist-detectable=true
+
+# Shell & Automation Scripts
+*.sh          linguist-language=Shell        linguist-detectable=true
+*.bash        linguist-language=Shell        linguist-detectable=true
+*.zsh         linguist-language=Shell        linguist-detectable=true
+*.ps1         linguist-language=PowerShell   linguist-detectable=true
+
+# Configurations & Orchestration Files
+*.yml         linguist-detectable=true
+*.yaml        linguist-detectable=true
+*.toml        linguist-detectable=true
+*.json        linguist-detectable=true
+
+# Templating Languages
+*.jinja       linguist-language=Jinja        linguist-detectable=true
+*.jinja2      linguist-language=Jinja        linguist-detectable=true
+
+# Documentation Overrides (Excludes docs/ and readmes from language bar)
+README.md     linguist-documentation
+docs/*        linguist-documentation
+
+# ==============================================================================
+# 3. BINARY & MEDIA ASSETS HANDLING
+# ==============================================================================
+# Prevent Git from attempting line ending conversions on binary files
+*.png         binary
+*.jpg         binary
+*.jpeg        binary
+*.gif         binary
+*.ico         binary
+*.pdf         binary
+*.zip         binary
+*.tar.gz      binary
+*.parquet     binary
+*.db          binary
+*.sqlite      binary
+*.pkl         binary
+*.onnx        binary
